@@ -4,6 +4,7 @@ import 'package:quiz_ui/colors.dart';
 import 'package:quiz_ui/views/bottom.dart';
 import 'package:custom_navigation_bar/custom_navigation_bar.dart';
 
+int _currentIndex = 0;
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     statusBarColor: Colors.white,
@@ -43,7 +44,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    var _currentIndex = 0;
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -63,23 +63,43 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       bottomNavigationBar: CustomNavigationBar(
         iconSize: 30.0,
-        selectedColor: Color(0xff040307),
-        bubbleCurve:Curves.linear,
+        elevation: 8,
+        selectedColor: textcolor,
         strokeColor: Colors.blue,
         unSelectedColor: Color(0xffacacac),
         backgroundColor: Colors.white,
         items: [
           CustomNavigationBarItem(
-            icon: Icon(Icons.home),
+            title: Text(
+              "Home",
+              style: TextStyle(
+                  fontSize: 15, fontWeight: FontWeight.w800, color: textcolor),
+            ),
+            icon: Icon(Icons.home_outlined),
           ),
           CustomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart),
+            title: Text(
+              "Profile",
+              style: TextStyle(
+                  fontSize: 15, fontWeight: FontWeight.w800, color: textcolor),
+            ),
+            icon: Icon(Icons.person_outline),
           ),
           CustomNavigationBarItem(
-            icon: Icon(Icons.lightbulb_outline),
+            title: Text(
+              "Question",
+              style: TextStyle(
+                  fontSize: 15, fontWeight: FontWeight.w800, color: textcolor),
+            ),
+            icon: Icon(Icons.question_answer_outlined),
           ),
           CustomNavigationBarItem(
-            icon: Icon(Icons.search),
+            title: Text(
+              "Start T/Q",
+              style: TextStyle(
+                  fontSize: 15, fontWeight: FontWeight.w800, color: textcolor),
+            ),
+            icon: Icon(Icons.play_circle_outline),
           ),
         ],
         currentIndex: _currentIndex,

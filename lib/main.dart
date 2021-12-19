@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:motion_toast/motion_toast.dart';
 import 'package:quiz_ui/colors.dart';
 import 'package:quiz_ui/views/bottom.dart';
 import 'package:custom_navigation_bar/custom_navigation_bar.dart';
@@ -51,10 +52,21 @@ class _MyHomePageState extends State<MyHomePage> {
         leading: Padding(
           padding: EdgeInsets.only(left: 10),
           child: IconButton(
-            icon: Image.asset(
-              'assets/icons/menu.png',
-              height: 80,
-              width: 100,
+            icon: InkWell(
+              onTap: () {
+                MotionToast.success(
+                        title: "Menu Clicked",
+                        titleStyle: TextStyle(fontWeight: FontWeight.bold),
+                        description: "Feature is under developement",
+                        descriptionStyle: TextStyle(fontSize: 12),
+                        width: 300)
+                    .show(context);
+              },
+              child: Image.asset(
+                'assets/icons/menu.png',
+                height: 80,
+                width: 100,
+              ),
             ),
             tooltip: 'Menu',
             onPressed: () {},

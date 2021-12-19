@@ -5,6 +5,7 @@ import 'package:quiz_ui/colors.dart';
 import 'package:quiz_ui/components/card_with_time_tile.dart';
 import 'package:quiz_ui/components/cards.dart';
 import 'package:quiz_ui/components/custom_tile.dart';
+import 'package:motion_toast/motion_toast.dart';
 
 class Bottom extends StatefulWidget {
   const Bottom({Key? key}) : super(key: key);
@@ -38,7 +39,16 @@ class _BottomState extends State<Bottom> {
                   ),
                   RoundedButtonWithIcon(
                     radius: 10,
-                    onPressed: () {},
+                    onPressed: () {
+                      MotionToast.success(
+                              title: "Save  Button Clicked",
+                              titleStyle:
+                                  TextStyle(fontWeight: FontWeight.bold),
+                              description: "Save Button Clicked toast",
+                              descriptionStyle: TextStyle(fontSize: 12),
+                              width: 300)
+                          .show(context);
+                    },
                     icon: Icons.file_download,
                     title: "",
                     buttonColor: Colors.purple,
@@ -51,15 +61,39 @@ class _BottomState extends State<Bottom> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  cards(
-                    title: 'Total Tests',
-                    integer: '200',
-                    color: "554FC1",
+                  InkWell(
+                    onTap: () {
+                      MotionToast.success(
+                              title: "Total Tests Clicked",
+                              titleStyle:
+                                  TextStyle(fontWeight: FontWeight.bold),
+                              description: "Feature is under developement",
+                              descriptionStyle: TextStyle(fontSize: 12),
+                              width: 300)
+                          .show(context);
+                    },
+                    child: cards(
+                      title: 'Total Tests',
+                      integer: '200',
+                      color: "554FC1",
+                    ),
                   ),
-                  cards(
-                    title: 'Total Student',
-                    integer: '250',
-                    color: "07BC26",
+                  InkWell(
+                    onTap: () {
+                      MotionToast.success(
+                              title: "Total Student Clicked",
+                              titleStyle:
+                                  TextStyle(fontWeight: FontWeight.bold),
+                              description: "Feature is under developement",
+                              descriptionStyle: TextStyle(fontSize: 12),
+                              width: 300)
+                          .show(context);
+                    },
+                    child: cards(
+                      title: 'Total Student',
+                      integer: '250',
+                      color: "07BC26",
+                    ),
                   ),
                 ],
               ),
@@ -69,15 +103,39 @@ class _BottomState extends State<Bottom> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  cards(
-                    title: 'Total Quizes',
-                    integer: '90',
-                    color: "C928B4",
+                  InkWell(
+                    onTap: () {
+                      MotionToast.success(
+                              title: "Total Quizes Clicked",
+                              titleStyle:
+                                  TextStyle(fontWeight: FontWeight.bold),
+                              description: "Feature is under developement",
+                              descriptionStyle: TextStyle(fontSize: 12),
+                              width: 300)
+                          .show(context);
+                    },
+                    child: cards(
+                      title: 'Total Quizes',
+                      integer: '90',
+                      color: "C928B4",
+                    ),
                   ),
-                  cards_time(
-                    title: 'Total Time',
-                    color: 'E8CD0D',
-                    integer: "05:30",
+                  InkWell(
+                    onTap: () {
+                      MotionToast.success(
+                              title: "Total Time Clicked",
+                              titleStyle:
+                                  TextStyle(fontWeight: FontWeight.bold),
+                              description: "Feature is under developementt",
+                              descriptionStyle: TextStyle(fontSize: 12),
+                              width: 300)
+                          .show(context);
+                    },
+                    child: cards_time(
+                      title: 'Total Time',
+                      color: 'E8CD0D',
+                      integer: "05:30",
+                    ),
                   ),
                 ],
               ),
@@ -87,12 +145,11 @@ class _BottomState extends State<Bottom> {
                 background_color: "#020087",
                 icon_color: "#FF5700",
                 title_color: "#FFFFFF"),
-                 custom_tile(
+            custom_tile(
                 title: "Certified Students",
                 background_color: "#020087",
                 icon_color: "#FF5700",
                 title_color: "#FFFFFF"),
-                
           ],
         ),
       ),

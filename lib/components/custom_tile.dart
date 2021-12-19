@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_awesome_buttons/flutter_awesome_buttons.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:motion_toast/motion_toast.dart';
 
 class custom_tile extends StatefulWidget {
   String title=" ";
@@ -16,6 +17,7 @@ class custom_tile extends StatefulWidget {
 class _custom_tileState extends State<custom_tile> {
   @override
   Widget build(BuildContext context) {
+    
     return Container(
             padding: const EdgeInsets.only(right: 8.0, left: 8.0),
 
@@ -36,7 +38,17 @@ class _custom_tileState extends State<custom_tile> {
                  Padding(
                    padding: const EdgeInsets.only(left: 8,right: 8),
                    child: RoundedButtonWithIcon(
-                      onPressed: (){},
+                      onPressed: (){
+                       
+                MotionToast.success(
+                        title: widget.title+" "+"Clicked",
+                        titleStyle: TextStyle(fontWeight: FontWeight.bold),
+                        description: "Feature is under developement",
+                        descriptionStyle: TextStyle(fontSize: 12),
+                        width: 300)
+                    .show(context);
+      
+                      },
                       icon:Icons.east,
                       
                       title: "",
